@@ -58,9 +58,10 @@ for (let i = 0; i < imageCollection.length; i++) {
         </div>
     </div>`;
     //Thumbs
-    `<div class="thumb">
-    <img src="${imageCollection[i]}" alt="Lorem">
-</div>`
+    thumbsRef.innerHTML +=`
+    <div class="thumb">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+    </div>`;
 }
 
 //Set active img and thumbnail default
@@ -74,6 +75,45 @@ console.log( document.getElementsByClassName('thumb') );
 //Ref
 const next = document.querySelector('.next');
 
+next.addEventListener('click', function(){
+
+    //Next loop navigation
+    if (activeImage === imageCollection.length - 1) {
+        activeImage = 0;
+    } else {
+        activeImage++;
+    }
+    //Img
+    //Reset active class
+    document.querySelector('.image-container.active').classList.remove('active');
+    //Add active class
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+    //Thumbnail
+    //Reset active class
+    document.querySelector('.thumb.active').classList.remove('active');
+    //Add active class
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+})
 //Previus img section
 //Ref
 const prev = document.querySelector('.prev');
+
+prev.addEventListener('click', function(){
+
+    //Previus loop navigation
+    if (activeImage === 0) {
+        activeImage = imageCollection.length - 1;
+    } else {
+        activeImage--;
+    }
+    //Img
+    //Reset active class
+    document.querySelector('.image-container.active').classList.remove('active');
+    //Add active class
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+    //Thumbnail
+    //Reset active class
+    document.querySelector('.thumb.active').classList.remove('active');
+    //Add active class
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+})
