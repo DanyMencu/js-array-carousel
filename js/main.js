@@ -40,3 +40,24 @@ const textCollection = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+//Ref
+const imgRef = document.querySelector('.images');
+const thumbsRef = document.querySelector('.thumbs');
+
+for (let i = 0; i < imageCollection.length; i++) {
+    //Img
+    imgRef.innerHTML += `
+    <div class="image-container">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+        <div class="text">
+            <h3>${titleCollection[i]}</h3>
+            <p>${textCollection[i]}</p>
+        </div>
+    </div>`;
+    //Thumbs
+    `<div class="thumb">
+    <img src="${imageCollection[i]}" alt="Lorem">
+</div>`
+}
+
+
