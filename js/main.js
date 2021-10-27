@@ -44,6 +44,9 @@ const textCollection = [
 const imgRef = document.querySelector('.images');
 const thumbsRef = document.querySelector('.thumbs');
 
+//Image active attribute
+let activeImage = 1;
+
 for (let i = 0; i < imageCollection.length; i++) {
     //Img
     imgRef.innerHTML += `
@@ -60,4 +63,17 @@ for (let i = 0; i < imageCollection.length; i++) {
 </div>`
 }
 
+//Set active img and thumbnail default
+document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+console.log( document.getElementsByClassName('image-container') );
 
+document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+console.log( document.getElementsByClassName('thumb') );
+
+//Next img section
+//Ref
+const next = document.querySelector('.next');
+
+//Previus img section
+//Ref
+const prev = document.querySelector('.prev');
