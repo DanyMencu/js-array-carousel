@@ -66,10 +66,7 @@ for (let i = 0; i < imageCollection.length; i++) {
 
 //Set active img and thumbnail default
 document.getElementsByClassName('image-container')[activeImage].classList.add('active');
-console.log( document.getElementsByClassName('image-container') );
-
 document.getElementsByClassName('thumb')[activeImage].classList.add('active');
-console.log( document.getElementsByClassName('thumb') );
 
 //Next img section
 //Ref
